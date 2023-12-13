@@ -1,0 +1,49 @@
+body{
+    font-family: sans-serif;
+}
+.logo{
+    display: flex;
+}
+.favicon{
+    width: 40px;
+    height: 40px;
+}
+.asidenav{
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(237, 190, 102);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.asidenav h1{
+    padding: 6px 8px 6px 6px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+.main{
+    margin-left: 160px;
+    font-size: 28px; 
+    padding: 0px 10px;
+}
+.typography{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+    .asidenav{
+        width: 115px;
+    }
+    .logo{
+        display: block;
+    }
+    .favicon{
+       margin-left: 40px;
+    }
+}

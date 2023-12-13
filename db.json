@@ -1,0 +1,32 @@
+{
+  "contacts": [
+    {
+      "name": "Марина",
+      "number": "+380975614321",
+      "org": "ДИЗЕЛЬ ШОУ",
+      "email": "",
+      "id": 1
+    },
+    {
+      "name": "Работа Начальник",
+      "number": "+380501573321",
+      "org": "ООО РАБОТА ЮА",
+      "email": "rabot.ua@ua.rabota",
+      "id": 3
+    },
+    {
+      "name": "Галя",
+      "number": "+380441211312",
+      "org": "",
+      "email": "",
+      "id": 5
+    },
+    {
+      "name": "Печенье Оптом",
+      "number": "+359878489531",
+      "org": "ООО \"BUTTER COOKIES\"",
+      "email": "buttercookies@cookies.da",
+      "id": 6
+    }
+  ]
+}
