@@ -17,7 +17,7 @@ function App() {
   const [contacts, setContacts] = useState(initializationContacts);
   const [query, setQuery] = useState("");
   useEffect(() => {
-    getContactsService().then((data) => setContacts(data))
+    // getContactsService().then((data) => setContacts(data))
   }, [])
 
   useEffect(() => {
