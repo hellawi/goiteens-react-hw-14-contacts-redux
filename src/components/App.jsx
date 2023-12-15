@@ -64,11 +64,11 @@ function App() {
           <img src="/favicon.png" alt="" className="favicon" />
           <h1 className="title">Phonebook</h1>
         </div>
-        <ContactForm onCreate={addContact} />
+        <ContactForm onCreate={1} />
       </div>
       <div className="main">
         <Input value={query} onChange={(event) => setQuery(event.target.value)} />
-        <ContactsList contacts={filteredContacts} onDelete={removeContact} />
+        <ContactsList contacts={filteredContacts} onDelete={1} />
         <div className="typography">
           <Typography variant="h6" sx={{color: "gray"}}>{contacts.length} contacts available</Typography>
         </div>
