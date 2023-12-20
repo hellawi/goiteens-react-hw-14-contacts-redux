@@ -3,15 +3,15 @@ import ContactForm from "./ContactForm/ContactForm";
 import ContactsList from "./ContactsList/ContactsList";
 import Input from "./Input/Input";
 import { Typography } from "@mui/material";
-import { selectContacts, selectFilteredContacts } from "../redux/contacts/contactsSelectors";
+import { selectContacts, selectFilteredContacts, selectQuery } from "../redux/contacts/contactsSelectors";
 import { useDispatch, useSelector } from "react-redux";
-import { addContactAction, removeContactAction } from "../redux/contacts/contactsActions";
+import { addContactAction, removeContactAction, setQueryAction } from "../redux/contacts/contactsActions";
 import { nanoid } from "nanoid";
 
 function App() {
   const contacts = useSelector(selectContacts);
-  const [query, setQuery] = useState("");
-  const filteredcontacts = useSelector(selectFilteredContacts)
+  const query = useSelector(selectQuery);
+  const filteredContacts = useSelector(selectFilteredContacts)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -38,16 +38,6 @@ function App() {
     dispatch(removeContactAction(id))
   }
 
-  // const filteredContacts = contacts.filter((contact) => contact.text.includes(query))
-
-  const filteredContacts = contacts.filter((contact) => {
-    if (contact.name.includes(query)) {
-      return true;
-    } else {
-      return false;
-    }
-  });
-
   return (
     <div>
       <div className="asidenav">
@@ -58,7 +48,7 @@ function App() {
         <ContactForm onCreate={addContact} />
       </div>
       <div className="main">
-        <Input value={query} onChange={(event) => setQuery(event.target.value)} />
+        <Input value={query} onChange={(event) => dispatch(setQueryAction(event.target.value))} />
         <ContactsList contacts={filteredContacts} onDelete={removeContact} />
         <div className="typography">
           <Typography variant="h6" sx={{color: "gray"}}>{contacts.length} contacts available</Typography>
